@@ -13,9 +13,7 @@ JSON_FILE_PATH=os.getenv("JSON_FILE_PATH")
 def ExecuteReal3dCommend(sentence, emotion, audio_path):
     src_img = SRC_IMG_DIR + "/" + emotion + ".jpg" # sourse img 的路徑
     drv_aud = audio_path # 音檔的路徑，從 JSON 檔案中取得
-    drv_pose = "default_drvpose.mp4" # 寫死的預設 driving pose 檔案
-    out_name = "output/temp/" + sentence + ".mp4"
-    out_mode = "final" # 寫死的輸出模式
+    out_name = "../Read3D-Interface/output/temp/" + sentence + ".mp4" # 因為 script 已經 cd 至 Read3D 的專案中了，故要從那個位置出發
 
     command = f"bash script.sh '{src_img}' '{audio_path}' '{out_name}'"
 
@@ -47,4 +45,5 @@ if __name__ == "__main__":
         videoPathArr.append("output/temp/" + item["sentence"] + ".mp4") # 將影片路徑加入 videoPathArr 陣列，用來合併影片
         
         ExecuteReal3dCommend(sentence, emotion, audio_path) # 執行 Real3d 的指令
-        ConnectVideo(videoPathArr) # 連接影片
+    
+    ConnectVideo(videoPathArr) # 連接影片
