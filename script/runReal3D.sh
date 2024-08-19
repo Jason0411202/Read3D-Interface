@@ -13,7 +13,7 @@ echo "Parameter 3: $param3"
 
 cd ../Real3DPortrait
 
-python_command="python ../Real3DPortrait/inference/real3d_infer.py --src_img \"$param1\" --drv_aud \"$param2\" --drv_pose \"../default_drvpose.mp4\" --out_name \"$param3\" --out_mode \"final\""
+python_command="python ../Real3DPortrait/inference/real3d_infer.py --src_img \"$param1\" --drv_aud \"$param2\" --drv_pose \"Inputs/drv_pose/default.mp4\" --out_name \"$param3\" --out_mode \"final\""
 echo "Executing command: $python_command"
 
 # 執行 python 指令
