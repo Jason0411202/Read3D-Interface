@@ -17,7 +17,7 @@ def ExecuteReal3dCommend(sentence, emotion, audio_path):
     out_mode = "final" # 寫死的輸出模式
 
     command = [
-        "python", "inference/real3d_infer.py",
+        "python", "../Real3DPortrait/inference/real3d_infer.py",
         "--src_img", src_img,
         "--drv_aud", drv_aud,
         "--drv_pose", drv_pose,

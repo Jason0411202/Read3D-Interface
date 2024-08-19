@@ -1,9 +1,9 @@
 # Read3D-Interface
 ## 環境配置
 ### 安裝所需依賴
+進入 real3dportrait 環境後，安裝 requirements.txt 中的套件
 ```bash
-conda create -n Read3D-Interface python=3.11
-conda activate Read3D-Interface
+conda activate /mnt/Nami/users/Jason0411202/anaconda3/envs/real3dportrait
 pip install -r requirements.txt
 ```
 
