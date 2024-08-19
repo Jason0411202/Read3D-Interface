@@ -40,7 +40,7 @@ if __name__ == "__main__":
     for item in data["content"]:
         sentence = item["sentence"]
         emotion = item["emotion"]
-        audio_path = item["audio_path"]
+        audio_path = item["audio_file_path"]
         videoPathArr.append("output/temp/" + item["sentence"] + ".mp4") # 將影片路徑加入 videoPathArr 陣列，用來合併影片
         
         ExecuteReal3dCommend(sentence, emotion, audio_path) # 執行 Real3d 的指令
