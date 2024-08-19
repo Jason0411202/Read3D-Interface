@@ -1,5 +1,6 @@
 import json
 import subprocess
+import sys
 from dotenv import load_dotenv
 from moviepy.editor import VideoFileClip, concatenate_videoclips
 import os
@@ -17,8 +18,7 @@ def ExecuteReal3dCommend(sentence, emotion, audio_path):
     out_mode = "final" # 寫死的輸出模式
 
     command = [
-        "conda", "run", "-p", "/mnt/Nami/users/Jason0411202/anaconda3/envs/real3dportrait",  # 指定 Conda 環境
-        "python", "../Real3DPortrait/inference/real3d_infer.py",
+        sys.executable, "python", "../Real3DPortrait/inference/real3d_infer.py",
         "--src_img", src_img,
         "--drv_aud", drv_aud,
         "--drv_pose", drv_pose,
