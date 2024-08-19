@@ -17,7 +17,7 @@ def ExecuteReal3dCommend(sentence, emotion, audio_path):
     out_mode = "final" # 寫死的輸出模式
 
     command = [
-        "conda", "run", "-n", "/mnt/Nami/users/Jason0411202/anaconda3/envs/real3dportrait",  # 指定 Conda 環境
+        "conda", "run", "-p", "/mnt/Nami/users/Jason0411202/anaconda3/envs/real3dportrait",  # 指定 Conda 環境
         "python", "../Real3DPortrait/inference/real3d_infer.py",
         "--src_img", src_img,
         "--drv_aud", drv_aud,
@@ -26,7 +26,8 @@ def ExecuteReal3dCommend(sentence, emotion, audio_path):
         "--out_mode", out_mode
     ]
 
-    subprocess.run(command) # 執行指令
+    print(" ".join(command)) # 印出指令
+    subprocess.run(command, check=True) # 執行指令
 
 def ConnectVideo(videoPathArr):
     clips = [VideoFileClip(file) for file in videoPathArr] # 讀取所有影片
