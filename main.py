@@ -17,13 +17,14 @@ def ExecuteReal3dCommend(sentence, emotion, audio_path):
     out_name = "output/temp/" + sentence + ".mp4"
     out_mode = "final" # 寫死的輸出模式
 
+    command = f"bash script.sh '{src_img}' '{audio_path}' '{out_name}'"
+
     command = [
-        sys.executable, "../Real3DPortrait/inference/real3d_infer.py",
-        "--src_img", src_img,
-        "--drv_aud", drv_aud,
-        "--drv_pose", drv_pose,
-        "--out_name", out_name,
-        "--out_mode", out_mode
+        "bash",
+        "script/runReal3D.sh",
+        src_img,
+        drv_aud,
+        out_name
     ]
 
     print(" ".join(command)) # 印出指令
