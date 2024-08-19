@@ -1,5 +1,5 @@
 source /mnt/Nami/users/Jason0411202/anaconda3/bin/activate
-conda activate /mnt/Nami/users/Jason0411202/anaconda3/envs/real3dportrait
+conda activate real3dportrait
 
 # 取得傳入的參數
 param1=$1
